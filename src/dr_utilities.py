@@ -204,12 +204,35 @@ def get_indent_str():
     return TAB * g_indent
 
 
+class dr_print_color():
+    color = {
+    'darkwhite':  "\033[0;37m",
+    'darkyellow': "\033[0;33m",
+    'darkgreen':  "\033[1;32m",
+    'darkblue':   "\033[1;34m",
+    'darkcyan':   "\033[1;36m",
+    'darkred':    "\033[4;31m",
+    'darkmagenta':"\033[0;35m",
+    'off':        "\033[0;0m"
+    }
 
-def print_dr(*args):
+    DOMAIN = color["darkred"]
+    TABLE = color["darkyellow"]
+    MATCHER = color["darkblue"]
+    MATCHER_MASK = color["darkcyan"]
+    RULE = color["darkgreen"]
+    RULE_MATCH = color["darkwhite"]
+    RULE_ACTIONS = color["darkmagenta"]
+    RESET = color["off"]
+
+
+def print_dr(color, *args):
     global g_indent
     tab = TAB * g_indent
     str_ = tab + " ".join(map(str, args))
+    sys.stdout.write(color)
     sys.stdout.write(str_)
+    sys.stdout.write(dr_print_color.RESET)
 
 
 def dict_join_str(in_dict):
