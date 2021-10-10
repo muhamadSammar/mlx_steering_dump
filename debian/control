@@ -1,0 +1,12 @@
+Source: mlx-steering-dump
+Section: net
+Priority: optional
+Maintainer: Muhammad Sammar <muhammads@nvidia.com>
+Build-Depends: python2
+Standards-Version: 1.0.0
+Homepage: http://www.mellanox.com/Mellanox/mlx_steering_dump
+
+Package: mlx-steering-dump
+Architecture: any
+Depends: python2
+Description: This is Mellanox SW steering parser and triggering for dump files in CSV format. 

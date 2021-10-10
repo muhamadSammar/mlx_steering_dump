@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+
+pname:=mlx-steering-dump
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	dh_installdirs -p$(pname) usr/share
+	dh_installdirs -p$(pname) usr/share/$(pname)/src
+	dh_installdirs -p$(pname) usr/share/$(pname)/src/parsers
+	dh_installdirs -p$(pname) usr/bin
+	install -m 0755 mlx_steering_dump_parser.py debian/$(pname)/usr/share/$(pname)
+	install -m 0755 src/*.py debian/$(pname)/usr/share/$(pname)/src
+	install -m 0755 src/parsers/* debian/$(pname)/usr/share/$(pname)/src/parsers
+	install -m 0755 mlx_steering_dump_wrapper.sh debian/$(pname)/usr/bin

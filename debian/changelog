@@ -1,0 +1,6 @@
+mlx-steering-dump (1.0.0-0) unstable; urgency=low
+
+  [ Muhammad Sammar ]
+  * Add debian support.
+
+ -- Muhammad Sammar <muhammads@nvidia.com>  Sun, 10 Oct 2021 11:32:23 -0600
